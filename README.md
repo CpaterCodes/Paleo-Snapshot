@@ -18,6 +18,38 @@ wanted to pursue this project for a number of other reasons:
 
 - As an expression of a long-standing passion for palaeontology and the natural world
 
+## User Stories
+
+```
+As a User
+So that I may feed my curiosity for palaeontological knowledge
+I wish to be able to search for genera and species and get a response
+[status: pending]
+```
+
+```
+As a User
+So that I may be engaged
+I wish to be provided with an image of the genus or species of interest
+[status: pending]
+```
+
+```
+As a User
+So that I may be well informed
+I wish to be provided with facts on taxonomy, time range, diet, reproduction
+and locomotion amongst other aspects
+[status: pending]
+```
+
+```
+As a User
+So that I may be provided with a dynamic and elegant experience
+I wish to be provided with the ability to alternate between different pages of
+information distinguished by theme
+[status: pending]
+```
+
 ## Testing options
 
 In the project directory, you can run:
