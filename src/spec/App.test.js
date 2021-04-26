@@ -3,6 +3,6 @@ import App from '../App';
 
 test('renders hello world', () => {
   render(<App />);
-  const helloWorld = screen.getByText(/Hello world! Let's build this thing!/i);
+  const helloWorld = screen.getByText(/Paleo Snapshot/i);
   expect(helloWorld).toBeInTheDocument();
 });
