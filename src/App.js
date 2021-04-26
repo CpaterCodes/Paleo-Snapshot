@@ -6,7 +6,6 @@ function App() {
         <header className="App-banner"> Paleo Snapshot
         </header>
         <div id="facts-console">
-          
         </div>
       </main>
   );
