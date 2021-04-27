@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ImagePort from '../ImagePort/ImagePort';
+import ImagePort from '../components/ImagePort';
 
 test('Can take and render an image', () => {
   const imgInput = "../../public/Pangea.jpeg"
