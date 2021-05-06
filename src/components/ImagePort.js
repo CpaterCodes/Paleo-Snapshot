@@ -7,7 +7,8 @@ export default class ImagePort extends Component {
     super(props);
     this.state = {
       img: (this.props.img || nullImage),
-      value: ""};
+      value: ""
+    };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -19,7 +20,7 @@ export default class ImagePort extends Component {
     return(
       <div>
         <img src={this.state.img} alt="Taxon thumbnail goes here"/> <br/>
-        <input type="text" value={this.state.taxon} onChange={this.handleChange}/>
+        <input type="text" value={this.state.value} onChange={this.handleChange}/>
         <input type="submit" value="=>" />
       </div>
     );
