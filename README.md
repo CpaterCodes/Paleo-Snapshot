@@ -5,8 +5,8 @@
 For this project I wanted to build a frontend single page application using React
 that consumes JSON responses from the Paleobiology Database API and presents a
 number of information points about any genus or species searched by the user.
-Full documentation for the API can be found [here](https://paleobiodb.org/data1.2/) and you can find out more about the
-database itself [here](https://paleobiodb.org/#/).
+Full documentation for the API can be found [here](https://paleobiodb.org/data1.2/)
+and you can find out more about the database itself [here](https://paleobiodb.org/#/).
 
 A number of excellent tools and applications which visualise the database's
 records for educational/exploratory purposes already exist, so I primarily
@@ -14,9 +14,9 @@ wanted to pursue this project for a number of other reasons:
 
 - To gain practice using React for frontend development.
 
-- To become more comfortable handling complex API requests and asynchronous operations
+- To become more comfortable handling complex API requests and asynchronous operations.
 
-- As an expression of a long-standing passion for palaeontology and the natural world
+- As an expression of a long-standing passion for palaeontology and the natural world.
 
 ## User Stories
 
