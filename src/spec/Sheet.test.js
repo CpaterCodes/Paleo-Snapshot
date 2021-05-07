@@ -8,13 +8,16 @@ test('Can take and host content', () => {
   expect(result).toBeInTheDocument();
 });
 
-test('Has Buttons', () => {
-  render(<Sheet content='skrak'/>);
-  const buttonA = screen.getByRole('button', {name:/Range/i});
-  const buttonB = screen.getByRole('button', {name:/Ecology/i});
-  const buttonC = screen.getByRole('button', {name:/Taxonomy/i});
+const hasButtonCalled = (buttonName) => {
+  let button = screen.getByRole('button', {name: buttonName});
+  expect(button).toBeInTheDocument();
+}
 
-  expect(buttonA).toBeInTheDocument();
-  expect(buttonB).toBeInTheDocument();
-  expect(buttonC).toBeInTheDocument();
+test('Has Buttons', () => {
+  render(<Sheet />);
+  hasButtonCalled(/Range/i);
+  hasButtonCalled(/Ecology/i);
+  hasButtonCalled(/Taxonomy/i);
 });
+
+//test('Buttons can alter content', () => {});

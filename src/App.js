@@ -1,4 +1,6 @@
 import './App.css';
+import ImagePort from './components/ImagePort'
+import Sheet from './components/Sheet';
 
 function App() {
   return (
@@ -6,6 +8,8 @@ function App() {
         <header className="App-banner">
           Paleo Snapshot
         </header>
+        <ImagePort/>
+        <Sheet/>
       </main>
   );
 }
