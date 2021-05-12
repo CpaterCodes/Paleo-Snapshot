@@ -6,22 +6,14 @@ export default class ImagePort extends Component {
   constructor(props){
     super(props);
     this.state = {
-      img: (this.props.img || nullImage),
-      value: ""
+      img: (this.props.img || nullImage)
     };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event){
-    this.setState({value: event.target.value});
   }
 
   render() {
     return(
       <div>
-        <img src={this.state.img} alt="Taxon thumbnail goes here"/> <br/>
-        <input type="text" value={this.state.value} onChange={this.handleChange}/>
-        <input type="submit" value="=>" />
+        <img src={this.state.img} alt="Taxon thumbnail goes here"/>
       </div>
     );
   }

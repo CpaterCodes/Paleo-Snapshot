@@ -1,6 +1,7 @@
 import './App.scss';
 import ImagePort from './components/ImagePort';
 import Sheet from './components/Sheet';
+import Search from './components/Search';
 
 const gingZorp = {
   range: "boo",
@@ -14,6 +15,7 @@ function App() {
         <header className="App-banner">
           Paleo Snapshot
         </header><br/>
+        <Search/>
         <Sheet dataSet={gingZorp}/>
       </main>
   );

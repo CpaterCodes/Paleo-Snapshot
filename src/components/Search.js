@@ -5,16 +5,21 @@ export default class Search extends Component {
   constructor(props){
     super(props);
     this.state = {
-      searchTerm: ""
+      value: ""
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e){
-    this.setState({searchTerm: e.target.searchTerm});
+    this.setState({value: e.target.value});
   }
 
   render() {
-    return('haha');
+    return(
+      <div className="search-bar">
+        <input type="text" value={this.state.value} onChange={this.handleChange}/>
+        <input type="submit" value="=>" />
+      </div>
+    );
   }
 }

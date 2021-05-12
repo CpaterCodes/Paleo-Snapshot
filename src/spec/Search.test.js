@@ -4,7 +4,7 @@ import Search from '../components/Search';
 
 test("Has a search bar with dynamic content", () => {
   render(<Search />);
-  textInput = screen.getByRole('input',{ name:'enterTaxon' });
+  const textInput = screen.getByRole('textbox', {name: ""});
   userEvent.type(textInput, 'Dunkleosteus');
   expect(textInput).toHaveValue('Dunkleosteus');
 
