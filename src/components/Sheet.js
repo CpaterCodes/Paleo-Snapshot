@@ -25,7 +25,7 @@ export default class Sheet extends Component {
 
   render() {
     return(
-      <div classname='Sheet-main'>
+      <div className='Sheet-main'>
         <section className='button-panel'>
           <button id="Range" onClick={() => this.setState({page: "Range"})}>Range</button>
           <button id="Ecology" onClick={() => this.setState({page: "Ecology"})}>Ecology</button>
