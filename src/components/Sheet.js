@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import './assets/Sheet.scss';
 
 export default class Sheet extends Component {
 
@@ -24,10 +25,12 @@ export default class Sheet extends Component {
 
   render() {
     return(
-      <div>
-        <button id="Range" onClick={() => this.setState({page: "Range"})}>Range</button>
-        <button id="Ecology" onClick={() => this.setState({page: "Ecology"})}>Ecology</button>
-        <button id="Taxonomy" onClick={() => this.setState({page: "Taxonomy"})}>Taxonomy</button>
+      <div classname='Sheet-main'>
+        <section className='button-panel'>
+          <button id="Range" onClick={() => this.setState({page: "Range"})}>Range</button>
+          <button id="Ecology" onClick={() => this.setState({page: "Ecology"})}>Ecology</button>
+          <button id="Taxonomy" onClick={() => this.setState({page: "Taxonomy"})}>Taxonomy</button>
+        </section>
         {this.dataPage()}
       </div>
     );

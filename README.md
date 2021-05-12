@@ -47,7 +47,7 @@ As a User
 So that I may be provided with a dynamic and elegant experience
 I wish to be provided with the ability to alternate between different pages of
 information distinguished by theme
-[status: pending]
+[status: complete]
 ```
 
 ## Testing options
