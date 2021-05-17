@@ -7,5 +7,4 @@ test("Has a search bar with dynamic content", () => {
   const textInput = screen.getByRole('textbox', {name: ""});
   userEvent.type(textInput, 'Dunkleosteus');
   expect(textInput).toHaveValue('Dunkleosteus');
-
 });

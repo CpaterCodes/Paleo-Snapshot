@@ -19,6 +19,9 @@ export default class Sheet extends Component {
         return (<section className="data-body">{this.state.dataSet.ecology}</section>);
       case "Taxonomy":
         return (<section className="data-body">{this.state.dataSet.taxonomy}</section>);
+      default:
+        return (<section className="data-body">pending...</section>);
+
     }
 
   }

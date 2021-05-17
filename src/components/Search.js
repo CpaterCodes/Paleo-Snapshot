@@ -8,18 +8,23 @@ export default class Search extends Component {
       value: ""
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e){
     this.setState({value: e.target.value});
   }
 
+  handleSubmit(e){
+    this.props.onSubmit(this.state.value);
+  }
+
   render() {
     return(
-      <div className="search-bar">
+      <form className="search-bar" onSubmit={this.handleSubmit}>
         <input type="text" value={this.state.value} onChange={this.handleChange}/>
         <input type="submit" value="=>" />
-      </div>
+      </form>
     );
   }
 }
