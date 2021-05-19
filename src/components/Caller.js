@@ -18,9 +18,22 @@ export default class Caller {
       range: (<ul>
                 <li>Time: {records.tei}-{records.tli}</li>
                 <li>Navigation: {records.jlh} </li>
-              </ul>),
-      ecology: (<ul> tba </ul>),
-      taxonomy: (<ul> tba </ul>)
+              </ul>
+              ),
+      ecology: (<ul>
+                  <li>Diet: {records.jdt}</li>
+                  <li>Reproduction: {records.jre}</li>
+                  <li>Environment: {records.jev}</li>
+                </ul>
+              ),
+      taxonomy: (<ul>
+                    <li>Phylum: {records.phl}</li>
+                    <li>Class: {records.cll}</li>
+                    <li>Order: {records.odl}</li>
+                    <li>Family: {records.fml}</li>
+                    <li>Genus: {records.gnl}</li>
+                 </ul>
+               ),
     }
   }
 }
