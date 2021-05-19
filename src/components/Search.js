@@ -17,6 +17,7 @@ export default class Search extends Component {
 
   handleSubmit(e){
     this.props.onSubmit(this.state.value);
+    e.preventDefault();
   }
 
   render() {
