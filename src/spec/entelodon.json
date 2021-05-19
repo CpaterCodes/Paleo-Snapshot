@@ -1,0 +1,29 @@
+{
+"elapsed_time":0.00412,
+  "records": [{
+    "oid":"txn:42369",
+    "rnk":5,
+    "nam":"Entelodon",
+    "par":"txn:42365",
+    "rid":"ref:6294",
+    "ext":"0",
+    "noc":19,
+    "tei":"Eocene",
+    "tli":"Rupelian",
+    "siz":8,
+    "exs":0,
+    "phl":"Chordata",
+    "cll":"Mammalia",
+    "odl":"Artiodactyla",
+    "fml":"Entelodontidae",
+    "gnl":"Entelodon",
+    "ttl":"Entelodon magnus",
+    "jev":"terrestrial",
+    "jec":"Artiodactyla",
+    "jmo":"actively mobile",
+    "jlh":"ground dwelling",
+    "jdt":"omnivore",
+    "jre":"viviparous",
+    "jco":"phosphatic"
+  }]
+}
