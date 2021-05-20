@@ -1,5 +1,5 @@
 import {Component} from 'react';
-
+import './assets/Search.scss';
 export default class Search extends Component {
 
   constructor(props){
@@ -23,8 +23,8 @@ export default class Search extends Component {
   render() {
     return(
       <form className="search-bar" onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.value} onChange={this.handleChange}/>
-        <input type="submit" value="=>" />
+        <input className="search-input" type="text" value={this.state.value} onChange={this.handleChange}/>
+        <input className="search-submit" type="submit" value="=>" />
       </form>
     );
   }

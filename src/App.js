@@ -4,27 +4,38 @@ import ImagePort from './components/ImagePort';
 import Sheet from './components/Sheet';
 import Search from './components/Search';
 import Caller from './components/Caller';
+// import Entelodon from './spec/entelodon.json';
 
-const gingZorp = {
-  range: "boo",
-  ecology: "bar",
-  taxonomy: "vaz"
+const emptyData = {
+  range: "Awaiting search",
+  ecology: "Awaiting search",
+  taxonomy: "Awaiting search"
 };
 
 class App extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {dataSet: emptyData};
+    this.searchSubmit = this.searchSubmit.bind(this);
+  }
 
+  searchSubmit(searchTerm) {
+    this.setState({dataSet: Caller.dataSet(searchTerm)});
+  }
 
   render() {
     return (
-      <main className="App-main">
+      <div className="App-body">
         <header className="App-banner">
           Paleo Snapshot
-        </header><br/>
-        <ImagePort/>
-        <Search onSubmit={console.log}/>
-        <Sheet dataSet={gingZorp}/>
-      </main>
+        </header>
+        <main className="App-main">
+          <ImagePort/>
+          <Search onSubmit={this.searchSubmit}/>
+          <Sheet dataSet={this.state.dataSet}/>
+        </main>
+      </div>
     );
   }
 }

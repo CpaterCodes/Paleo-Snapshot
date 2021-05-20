@@ -1,0 +1,17 @@
+.search-bar {
+  min-width: 44vh;
+  display: flex;
+}
+
+.search-input {
+  background-color: magenta;
+  border-color: magenta;
+  min-width:85%;
+}
+
+.search-submit {
+  color: cyan;
+  background-color: black;
+  border-color: black;
+  min-width: 10%;
+}

@@ -1,18 +1,19 @@
 .App-banner {
   text-align: center;
-  width:100%;
-  display:flex;
   padding: 3vh;
   font-size: 8vh;
-  justify-content: center;
   background-color: magenta;
 }
 
-.App-main {
+.App-body {
+  min-width: 100%;
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-size: calc(10px + 2vmin);
+}
+
+.App-main {
+display:flex;
+flex-direction: column;
+align-items: center;
 }
