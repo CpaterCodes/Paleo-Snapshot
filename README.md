@@ -14,7 +14,7 @@ wanted to pursue this project for a number of other reasons:
 
 - To gain practice using React for frontend development.
 
-- To become more comfortable handling complex API requests and asynchronous operations.
+- To become more comfortable handling API requests and asynchronous operations.
 
 - As an expression of a long-standing passion for palaeontology and the natural world.
 
@@ -24,7 +24,7 @@ wanted to pursue this project for a number of other reasons:
 As a User
 So that I may feed my curiosity for palaeontological knowledge
 I wish to be able to search for genera and species and get a response
-[status: pending]
+[status: nearing completion]
 ```
 
 ```
@@ -39,7 +39,7 @@ As a User
 So that I may be well informed
 I wish to be provided with facts on taxonomy, time range, diet, reproduction
 and locomotion amongst other aspects
-[status: pending]
+[status: architecture complete, functionality contingent on pending integration]
 ```
 
 ```
@@ -52,7 +52,7 @@ information distinguished by theme
 
 ## Testing options
 
-In the project directory, you can run:
+In the project directory, you can run the following:
 
 ```yarn start``` || ```npm start```
 
