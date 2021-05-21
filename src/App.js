@@ -4,7 +4,6 @@ import ImagePort from './components/ImagePort';
 import Sheet from './components/Sheet';
 import Search from './components/Search';
 import Caller from './components/Caller';
-// import Entelodon from './spec/entelodon.json';
 
 const emptyData = {
   range: "Awaiting search",

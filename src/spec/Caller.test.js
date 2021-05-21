@@ -1,4 +1,4 @@
-import * as Entelodon from './entelodon.json';
+import Entelodon from './entelodon.json';
 import Caller from '../components/Caller';
 import { render, screen } from '@testing-library/react';
 
