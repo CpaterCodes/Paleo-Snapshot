@@ -2,6 +2,8 @@
 
 ## Introduction and Rationale
 
+[The build is currently not yet functional, but is nearing completion].
+
 For this project I wanted to build a frontend single page application using React
 that consumes JSON responses from the Paleobiology Database API and presents a
 number of information points about any genus or species searched by the user.
