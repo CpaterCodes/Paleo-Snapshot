@@ -1,31 +1,24 @@
-import {Component} from 'react';
+import React, { useState } from 'react';
 import './assets/Search.scss';
-export default class Search extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      value: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+export default function Search(props) {
+  const [term, setTerm] = useState("");
 
-  handleChange(e){
-    this.setState({value: e.target.value});
-  }
-
-  handleSubmit(e){
-    this.props.onSubmit(this.state.value);
+  const handleSubmit = (e) => {
     e.preventDefault();
+    props.onSubmit(term);
   }
 
-  render() {
-    return(
-      <form className="search-bar" onSubmit={this.handleSubmit}>
-        <input className="search-input" type="text" value={this.state.value} onChange={this.handleChange}/>
-        <input className="search-submit" type="submit" value="=>" />
+  return(
+      <form className="search-bar"
+        onSubmit={handleSubmit}>
+
+        <input className="search-input" type="text" value={term}
+          onChange={e => setTerm(e.target.value)}/>
+
+        <input className="search-submit"
+          type="submit" value="=>" />
+
       </form>
     );
-  }
 }
