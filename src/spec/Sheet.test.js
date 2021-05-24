@@ -1,12 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Sheet from '../components/Sheet';
-
-const dataSet = {
-  range: "I lived for some time",
-  ecology: "I ate some things",
-  taxonomy: "I was something"
-};
+import Entelodon from './entelodon.json';
 
 const hasButtonCalled = (buttonName) => {
   let button = screen.getByRole('button', {name: buttonName});
@@ -14,17 +9,17 @@ const hasButtonCalled = (buttonName) => {
 }
 
 test('Has Buttons', () => {
-  render(<Sheet dataSet={dataSet}/>);
+  render(<Sheet dataSet={Entelodon.records[0]}/>);
   hasButtonCalled(/Range/i);
   hasButtonCalled(/Ecology/i);
   hasButtonCalled(/Taxonomy/i);
 });
 
 test('Buttons can alter content', () => {
-  render(<Sheet dataSet={dataSet}/>);
-  let rangeData = screen.getByText(/I lived for some time/i);
-  expect(rangeData).toBeInTheDocument();
+  render(<Sheet dataSet={Entelodon.records[0]}/>);
+  let jlh = screen.getByText(/ground dwelling/i);
+  expect(jlh).toBeInTheDocument();
   userEvent.click(screen.getByText(/Ecology/i));
-  let ecologyData = screen.getByText(/I ate some things/i);
-  expect(ecologyData).toBeInTheDocument();
+  let jdt = screen.getByText(/omnivore/i);
+  expect(jdt).toBeInTheDocument();
 });

@@ -4,6 +4,7 @@ import ImagePort from './components/ImagePort';
 import Sheet from './components/Sheet';
 import Search from './components/Search';
 import Caller from './components/Caller';
+import Page from './components/Page';
 
 const emptyData = {
   range: "Awaiting search",
@@ -20,7 +21,7 @@ class App extends Component {
   }
 
   searchSubmit(searchTerm) {
-    this.setState({dataSet: Caller.dataSet(searchTerm)});
+    this.setState({dataSet: Caller.getData(searchTerm)});
   }
 
   render() {

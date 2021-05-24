@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import Page from './Page.js';
 import './assets/Sheet.scss';
 
 export default class Sheet extends Component {
@@ -6,24 +7,9 @@ export default class Sheet extends Component {
   constructor(props){
     super(props);
     this.state = {
-      dataSet: this.props.dataSet || "",
+      dataSet: this.props.dataSet || null,
       page: "Range"
     };
-  }
-
-  dataPage(){
-    switch(this.state.page){
-      case "Range":
-        return (<section className="data-body">{this.state.dataSet.range}</section>);
-      case "Ecology":
-        return (<section className="data-body">{this.state.dataSet.ecology}</section>);
-      case "Taxonomy":
-        return (<section className="data-body">{this.state.dataSet.taxonomy}</section>);
-      default:
-        return (<section className="data-body">pending...</section>);
-
-    }
-
   }
 
   render() {
@@ -34,7 +20,7 @@ export default class Sheet extends Component {
           <button id="Ecology" onClick={() => this.setState({page: "Ecology"})}>Ecology</button>
           <button id="Taxonomy" onClick={() => this.setState({page: "Taxonomy"})}>Taxonomy</button>
         </section>
-        {this.dataPage()}
+          <Page data={this.state.dataSet} page={this.state.page}/>
       </div>
     );
   }
