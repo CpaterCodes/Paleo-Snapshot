@@ -32,8 +32,8 @@ I wish to be able to search for genera and species and get a response
 ```
 As a User
 So that I may be engaged
-I wish to be provided with an image of the genus or species of interest
-[status: pending]
+I wish to be provided with a thumbnail of the genus or species of interest
+[status: complete]
 ```
 
 ```

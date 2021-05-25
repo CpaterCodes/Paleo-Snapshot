@@ -22,17 +22,17 @@ class App extends Component {
   searchSubmit(searchTerm) {
     fetch('https://paleobiodb.org/data1.2/taxa/list.json?name=' + searchTerm + '&show=full')
     .then(res => res.json().then(data => this.handleNewData(data)));
-    // fetch('https://paleobiodb.org/data1.2/taxa/thumb.png?name=' + searchTerm)
-    // .then(img => this.handleNewImage(img));
+    fetch('https://paleobiodb.org/data1.2/taxa/thumb.png?name=' + searchTerm)
+    .then(img => this.handleNewImage(img));
   }
 
   handleNewData(data){
     this.setState({dataSet: data.records[0]});
   }
 
-  // handleNewImage(img){
-  //   this.setState({img: img});
-  // }
+  handleNewImage(img){
+    this.setState({img: img.url});
+  }
 
   render() {
     return (
