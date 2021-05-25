@@ -14,7 +14,7 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.state = {dataSet: emptyData};
+    this.state = {dataSet: emptyData, img: null};
     this.searchSubmit = this.searchSubmit.bind(this);
     this.handleNewData = this.handleNewData.bind(this);
   }
@@ -22,12 +22,17 @@ class App extends Component {
   searchSubmit(searchTerm) {
     fetch('https://paleobiodb.org/data1.2/taxa/list.json?name=' + searchTerm + '&show=full')
     .then(res => res.json().then(data => this.handleNewData(data)));
+    // fetch('https://paleobiodb.org/data1.2/taxa/thumb.png?name=' + searchTerm)
+    // .then(img => this.handleNewImage(img));
   }
 
   handleNewData(data){
-    console.log(data.records[0]);
     this.setState({dataSet: data.records[0]});
   }
+
+  // handleNewImage(img){
+  //   this.setState({img: img});
+  // }
 
   render() {
     return (
@@ -36,7 +41,7 @@ class App extends Component {
           Paleo Snapshot
         </header>
         <main className="App-main">
-          <ImagePort/>
+          <ImagePort img={this.state.img}/>
           <Search onSubmit={this.searchSubmit}/>
           <Sheet dataSet={this.state.dataSet}/>
         </main>

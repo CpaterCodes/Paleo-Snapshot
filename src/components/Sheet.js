@@ -5,7 +5,6 @@ import './assets/Sheet.scss';
 
 export default function Sheet(props){
   
-  const [dataSet,setDataSet] = useState(props.dataSet);
   const [page,setPage] = useState("Range");
 
   return(
