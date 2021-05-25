@@ -10,8 +10,8 @@ test('renders title', () => {
 
 test('Can retrieve an extinct animal for taxonomy info', () => {
   render(<App />);
-  const searchInput = screen.getByRole('textbox', {name: ""})
-  userEvent.type(searchInput, "Tyrannosaurus");
+  const searchInput = screen.getByRole('textbox');
+  userEvent.type(searchInput, "Entelodon");
   userEvent.click(screen.getByRole('button', {name: "=>"}));
   userEvent.click(screen.getByRole('button', {name: 'Taxonomy'}));
   const chordata = screen.getByText(/Phylum: Chordata/i);

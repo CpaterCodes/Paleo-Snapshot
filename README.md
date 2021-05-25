@@ -26,7 +26,7 @@ wanted to pursue this project for a number of other reasons:
 As a User
 So that I may feed my curiosity for palaeontological knowledge
 I wish to be able to search for genera and species and get a response
-[status: nearing completion]
+[status: complete]
 ```
 
 ```
@@ -41,7 +41,7 @@ As a User
 So that I may be well informed
 I wish to be provided with facts on taxonomy, time range, diet, reproduction
 and locomotion amongst other aspects
-[status: architecture complete, functionality contingent on pending integration]
+[status: complete]
 ```
 
 ```

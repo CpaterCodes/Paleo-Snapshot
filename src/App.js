@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   handleNewData(data){
+    console.log(data.records[0]);
     this.setState({dataSet: data.records[0]});
   }
 
