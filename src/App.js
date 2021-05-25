@@ -4,7 +4,6 @@ import ImagePort from './components/ImagePort';
 import Sheet from './components/Sheet';
 import Search from './components/Search';
 import Caller from './components/Caller';
-import Page from './components/Page';
 
 const emptyData = {
   range: "Awaiting search",
@@ -18,10 +17,16 @@ class App extends Component {
     super(props);
     this.state = {dataSet: emptyData};
     this.searchSubmit = this.searchSubmit.bind(this);
+    this.handleNewData = this.handleNewData.bind(this);
   }
 
   searchSubmit(searchTerm) {
-    this.setState({dataSet: Caller.getData(searchTerm)});
+    fetch('https://paleobiodb.org/data1.2/taxa/list.json?name=' + searchTerm + '&show=full')
+    .then(res => res.json().then(data => this.handleNewData(data)));
+  }
+
+  handleNewData(data){
+    this.setState({dataSet: data.records[0]});
   }
 
   render() {
