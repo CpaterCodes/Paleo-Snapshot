@@ -4,13 +4,7 @@ import Page from './Page.js';
 import './assets/Sheet.scss';
 
 export default function Sheet(props){
-
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     dataSet: this.props.dataSet || null,
-  //     page: "Range"
-  //   };
+  
   const [dataSet,setDataSet] = useState(props.dataSet);
   const [page,setPage] = useState("Range");
 

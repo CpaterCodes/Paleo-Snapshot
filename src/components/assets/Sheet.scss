@@ -1,23 +1,24 @@
-$primaryColour: magenta;
-$secondaryColour: cyan;
+@import "./_colours.scss";
 
 .data-body {
-overflow-y: auto;
+overflow: auto;
 min-height: 20vh;
 }
 
 .button-panel {
 display: flex;
 flex-direction: row;
+min-width: 100%;
+border-color: $primary;
+justify-content: space-around;
 }
 
 button {
   border: none;
-  background-color: $primaryColour;
+  background-color: $primary;
   border-radius: 2px;
-  width: 50%;
+  width: 30%;
   height: 5vh;
-  font-size: 100%;
 }
 
 button:active {
@@ -25,13 +26,17 @@ button:active {
 }
 
 .Sheet-main {
-  min-width: 44vh;
+  display: flex;
+  flex-direction: column;
+  width: 50vmax;
+  align-items: center;
 }
 .data-body {
-  color:$secondaryColour;
+  color: $secondary;
+  min-width: 95%;
   min-height: 30vh;
   border-style: solid;
   border-width: 4px;
-  border-color: $primaryColour;
+  border-color: $primary;
   border-radius: 0px 0px 20px 20px;
 }

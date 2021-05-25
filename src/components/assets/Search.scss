@@ -1,17 +1,26 @@
+@import "./_colours.scss";
+
 .search-bar {
-  min-width: 44vh;
+  padding: 2vh;
+  border-radius: 3px;
+  width: 47vw;
+  min-height: 5vh;
   display: flex;
+  justify-content: center;
 }
 
 .search-input {
-  background-color: magenta;
-  border-color: magenta;
-  min-width:85%;
+  background-color: $voidspace;
+  color: $secondary;
+  border-color: $primary;
+  border-width: 0.3vw;
+  border-style: solid;
+  min-width:90%;
 }
 
 .search-submit {
-  color: cyan;
-  background-color: black;
-  border-color: black;
-  min-width: 10%;
+  background-color: $primary;
+  border: none;
+  max-width: 20%;
+  border-radius: 0 2px 2px 0;
 }
