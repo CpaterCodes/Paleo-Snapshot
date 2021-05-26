@@ -16,22 +16,21 @@ class App extends Component {
     super(props);
     this.state = {dataSet: emptyData, img: null};
     this.searchSubmit = this.searchSubmit.bind(this);
-    this.handleNewData = this.handleNewData.bind(this);
   }
 
   searchSubmit(searchTerm) {
+   this.handleNewData(searchTerm);
+   this.handleNewImage(searchTerm);
+  }
+
+  handleNewData(searchTerm){
     fetch('https://paleobiodb.org/data1.2/taxa/list.json?name=' + searchTerm + '&show=full')
-    .then(res => res.json().then(data => this.handleNewData(data)));
+    .then(res => res.json()).then(data => this.setState({dataSet: data.records[0]}));
+  }
+
+  handleNewImage(searchTerm){
     fetch('https://paleobiodb.org/data1.2/taxa/thumb.png?name=' + searchTerm)
-    .then(img => this.handleNewImage(img));
-  }
-
-  handleNewData(data){
-    this.setState({dataSet: data.records[0]});
-  }
-
-  handleNewImage(img){
-    this.setState({img: img.url});
+    .then(img => this.setState({img: img.url}));
   }
 
   render() {
