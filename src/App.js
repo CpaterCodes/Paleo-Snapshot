@@ -3,6 +3,7 @@ import {Component} from 'react';
 import ImagePort from './components/ImagePort';
 import Sheet from './components/Sheet';
 import Search from './components/Search';
+import NullData from './components/assets/null_data.json';
 
 const emptyData = {
   range: "Awaiting search",
@@ -25,12 +26,16 @@ class App extends Component {
 
   handleNewData(searchTerm){
     fetch('https://paleobiodb.org/data1.2/taxa/list.json?name=' + searchTerm + '&show=full')
-    .then(res => res.json()).then(data => this.setState({dataSet: data.records[0]}));
+    .then(res => res.json())
+    .then(data => this.setState(
+        {dataSet: data.records[0]? data.records[0] : NullData}
+      )
+    );
   }
 
   handleNewImage(searchTerm){
     fetch('https://paleobiodb.org/data1.2/taxa/thumb.png?name=' + searchTerm)
-    .then(img => this.setState({img: img.url}));
+    .then(res => this.setState({img: res.status === 200 ? res.url : null}));
   }
 
   render() {
