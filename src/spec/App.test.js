@@ -23,7 +23,9 @@ test('Will display a thumbnail of the animal', async () => {
   const searchInput = screen.getByRole('textbox');
   userEvent.type(searchInput, "Eretmorhipis");
   userEvent.click(screen.getByRole('button', {name: "=>"}));
-  const eretmorhipis = await screen.findByRole('img');
-  expect(eretmorhipis).toHaveAttribute('src',
-  'https://paleobiodb.org/data1.2/taxa/thumb.png?name=Eretmorhipis');
+
+  const eretmorhipis = await screen.findByTestId(
+    'https://paleobiodb.org/data1.2/taxa/thumb.png?name=Eretmorhipis'
+  );
+  expect(eretmorhipis).toBeInTheDocument;
 });
