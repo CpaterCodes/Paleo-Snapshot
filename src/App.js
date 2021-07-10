@@ -25,10 +25,14 @@ class App extends Component {
   }
 
   handleNewData(searchTerm){
+    if(!searchTerm){
+      this.setState({dataSet: NullData})
+      return
+    }
     fetch('https://paleobiodb.org/data1.2/taxa/list.json?name=' + searchTerm + '&show=full')
     .then(res => res.json())
     .then(data => this.setState(
-        {dataSet: data.records[0]? data.records[0] : NullData}
+        {dataSet: data.records[0] ? data.records[0] : NullData}
       )
     );
   }

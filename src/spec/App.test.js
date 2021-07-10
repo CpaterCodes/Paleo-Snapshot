@@ -29,3 +29,16 @@ test('Will display a thumbnail of the animal', async () => {
   );
   expect(eretmorhipis).toBeInTheDocument;
 });
+
+test('Can handle null or invalid entry', async () => {
+  render(<App />);
+  userEvent.click(screen.getByRole('button', {name: "=>"}));
+  const appRunning = await screen.findByText(/Paleo Snapshot/i);
+  expect(appRunning).toBeInTheDocument();
+
+  const searchInput = screen.getByRole('textbox');
+  userEvent.type(searchInput, "yabdabadoo");
+  userEvent.click(screen.getByRole('button', {name: "=>"}));
+  const appStillRunning = await screen.findByText(/Paleo Snapshot/i);
+  expect(appStillRunning).toBeInTheDocument();
+});
