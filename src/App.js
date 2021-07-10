@@ -19,27 +19,28 @@ class App extends Component {
     this.searchSubmit = this.searchSubmit.bind(this);
   }
 
-  searchSubmit(searchTerm) {
-   this.handleNewData(searchTerm);
-   this.handleNewImage(searchTerm);
+  async searchSubmit(searchTerm) {
+   await this.handleNewData(searchTerm);
+   await this.handleNewImage(searchTerm);
   }
 
-  handleNewData(searchTerm){
-    if(!searchTerm){
-      this.setState({dataSet: NullData})
+  async handleNewData(searchTerm){
+    const res = await fetch(`https://paleobiodb.org/data1.2/taxa/list.json?name=${searchTerm}&show=full`);
+    if(!res.ok){
+      this.setState({dataSet: NullData});
       return
     }
-    fetch('https://paleobiodb.org/data1.2/taxa/list.json?name=' + searchTerm + '&show=full')
-    .then(res => res.json())
-    .then(data => this.setState(
-        {dataSet: data.records[0] ? data.records[0] : NullData}
-      )
-    );
+    const data = await res.json();
+    this.setState({dataSet: data.records[0] ? data.records[0] : NullData});
   }
 
-  handleNewImage(searchTerm){
-    fetch('https://paleobiodb.org/data1.2/taxa/thumb.png?name=' + searchTerm)
-    .then(res => this.setState({img: res.status === 200 ? res.url : null}));
+  async handleNewImage(searchTerm){
+    if(!searchTerm){
+      this.setState({img: null});
+      return
+    }
+    const img = await fetch(`https://paleobiodb.org/data1.2/taxa/thumb.png?name=${searchTerm}`);
+    this.setState({img: img.status === 200 ? img.url : null});
   }
 
   render() {

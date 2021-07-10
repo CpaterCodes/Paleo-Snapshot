@@ -5,7 +5,12 @@ import nullImage from './assets/null_result.png';
 export default function ImagePort(props){
   const [img, setImg] = useState(nullImage);
 
-  useEffect(() => { setImg(props.img ? props.img : nullImage); }, [props.img]);
+  useEffect(
+    () => {
+      setImg(props.img ? props.img : nullImage);
+    },
+    [props.img]
+  );
 
   return (
     <div className="Image-port">
