@@ -1,5 +1,5 @@
 import './App.scss';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ImagePort from './components/ImagePort';
 import Sheet from './components/Sheet';
 import Search from './components/Search';
@@ -7,31 +7,29 @@ import NullData from './components/assets/null_data.json';
 
 export default function App(){
 
-  const [data, setData] = useState(NullData);
-  const [img, setImg] = useState(null);
+  const [result, setResult] = useState({ data: NullData, img: null });
 
   const searchSubmit = async(searchTerm) => {
-    await handleNewData(searchTerm);
-    await handleNewImage(searchTerm);
+    let newImg = await fetchImg(searchTerm);
+    let newData = await fetchData(searchTerm);
+    setResult({data: newData, img: newImg});
   }
 
-  const handleNewData = async(searchTerm) => {
+  const fetchData = async(searchTerm) => {
     const res = await fetch(`https://paleobiodb.org/data1.2/taxa/list.json?name=${searchTerm}&show=full`);
     if(!res.ok){
-      setData(NullData);
-      return
+      return NullData
     }
     const data = await res.json();
-    setData(data.records[0] ? data.records[0] : NullData);
+    return data.records[0] ? data.records[0] : NullData;
   }
 
-  const handleNewImage = async(searchTerm) => {
+  const fetchImg = async(searchTerm) => {
     if(!searchTerm){
-      setImg(null);
-      return
+      return null
     }
     const imgRes = await fetch(`https://paleobiodb.org/data1.2/taxa/thumb.png?name=${searchTerm}`);
-    setImg(imgRes.status === 200 ? imgRes.url : null);
+    return imgRes.status === 200 ? imgRes.url : null;
   }
 
   return (
@@ -40,9 +38,9 @@ export default function App(){
         Paleo Snapshot
       </header>
       <main className="App-main">
-        <ImagePort img={img}/>
+        <ImagePort img={result.img}/>
         <Search onSubmit={searchSubmit}/>
-        <Sheet dataSet={data}/>
+        <Sheet dataSet={result.data}/>
       </main>
     </div>
   );
